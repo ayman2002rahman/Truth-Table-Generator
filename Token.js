@@ -46,6 +46,9 @@ export class Token {
     getLexeme() {
         return this.lexeme;
     }
+    setLexeme(lexeme) {
+        this.lexeme = lexeme;
+    }
     getType() {
         return this.type;
     }
