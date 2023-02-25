@@ -102,10 +102,25 @@ function generateTruthTable(userInput, expression) {
         table[0][variableMap[variable]] = variable;
     })
 
-    /*
-    for(let i = 2 ** num / 2; i < 2 ** num; i++) {
+    //Fills in the 1s for the table
+    for(let j = 0; j < variables.size; j++) {
+        let alternatingNum = 2 ** (variables.size - j - 1)
+        console.log(alternatingNum);
+        if(j == 0) {
+            console.log(((3 - 1) % alternatingNum))
+        }
+        for(let i = alternatingNum + 1; i <= 2 ** variables.size; i++) {
+            console.log(i);
+            if(Math.floor((i - 1) / alternatingNum) % 2 == 1) {
+                table[i][j] = 1;
+            }
+        }
+    }
 
-    }*/
+    //Calculates the logic for each input scenario
+    for(let i = 1; i < 2 ** variables.size + 1; i++) {
+        
+    }
 
     //Make sure that the bounds are right for the table
     document.write("<table border = '1'>");
